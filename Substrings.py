@@ -25,12 +25,12 @@
 
 # trying to figure out the best brute force way to solve the question 
 i=0
-list=[]
-for i in range(len(string))://looping through the given string to find A 
-  if string[i]=="A":  //Checking if the A is in the current index
-     for j=i+1 in range(len(string)):// if A is found start from the index after A 
-        if string[j]=="B":// check if it is B and if it is store it into the list and continue looking for other B 
-          list.add(string[i:j])
+result=[]
+word="ABRAB"
+for i in range(len(word)):
+  if word[i]=="A":  
+     for j in range(i+1,len(word)):
+      if word[j]=="B":
+          result.append(word[i:j])
 
           
-    
