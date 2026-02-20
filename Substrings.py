@@ -32,5 +32,5 @@ for i in range(len(word)):
      for j in range(i+1,len(word)):
       if word[j]=="B":
           result.append(word[i:j])
-
+print(result)
           
