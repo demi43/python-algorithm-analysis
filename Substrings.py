@@ -22,3 +22,15 @@
 # 5. If Option 3 is selected:
 #    a. Exit the program.
 # 6. Repeat the menu until the user chooses to exit.
+
+# trying to figure out the best brute force way to solve the question 
+i=0
+list=[]
+for i in range(len(string)):
+  if string[i]=="A":
+     for j=i in range(len(string)):
+        if string[j]=="B":
+          list.add(string[i:j])
+
+          
+    
