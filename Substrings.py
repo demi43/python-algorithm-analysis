@@ -34,25 +34,53 @@
 # Exit the program.
 # Repeat the menu until the user chooses to exit.
 
-
-
 # Pseudocode Syntax: 
-# Algorithm CountABSubstrings(S)
-# Input: String S of length n
-# Output: List of substrings that start with A and end with B,
-#         and total number of comparisons
-# result ← empty list
-# comparisons ← 0
-# n ← length(S)
-# for i ← 0 to n − 1 do
-#     comparisons ← comparisons + 1
-#     if uppercase(S[i]) = 'A' then
-#         for j ← i + 1 to n − 1 do
-#             comparisons ← comparisons + 1
-#             if uppercase(S[j]) = 'B' then
-#                 append substring S[i..j] to result
-# return result, comparisons
-
+# PROCEDURE MainProgram
+#     DECLARE word AS STRING ← ""
+#     LOOP FOREVER
+#         DISPLAY "----------------- MAIN MENU --------------"
+#         DISPLAY "1. Read input string"
+#         DISPLAY "2. Run algorithm and display outputs"
+#         DISPLAY "3. Exit program"
+#         INPUT option
+#         IF option IS NOT INTEGER THEN
+#             DISPLAY "Invalid Input! Please enter a number."
+#             CONTINUE LOOP
+#         ENDIF
+#         SWITCH option
+#             CASE 1:
+#                 INPUT word
+#             CASE 2:
+#                 CALL SubStringalgorithm(word) → result, comparisons
+#                 DISPLAY "Input string: ", word
+#                 DISPLAY "# of substrings: ", LENGTH(result)
+#                 DISPLAY "Listing of substrings: ", result
+#                 DISPLAY "# of comparisons: ", comparisons
+#             CASE 3:
+#                 DISPLAY "Exiting Program..."
+#                 EXIT LOOP
+#             DEFAULT:
+#                 DISPLAY "Invalid input, try again."
+#         ENDSWITCH
+#     ENDLOOP
+# ENDPROCEDURE
+# FUNCTION SubStringalgorithm(word: STRING) RETURNS (ARRAY OF STRING, INTEGER)
+#     DECLARE i, j AS INTEGER
+#     DECLARE result AS ARRAY OF STRING ← []
+#     DECLARE comparisons AS INTEGER ← 0
+#     FOR i FROM 0 TO LENGTH(word) - 1 DO
+#         comparisons ← comparisons + 1
+#         IF UPPERCASE(word[i]) = "A" THEN
+#             FOR j FROM i + 1 TO LENGTH(word) - 1 DO
+#                 comparisons ← comparisons + 1
+#                 IF UPPERCASE(word[j]) = "B" THEN
+#                     APPEND SUBSTRING(word, i, j) TO result
+#                 ENDIF
+#             ENDFOR
+#         ENDIF
+#     ENDFOR
+#     RETURN result, comparisons
+# ENDFUNCTION
 
 def main():
     word=""
